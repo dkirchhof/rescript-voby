@@ -1,0 +1,111 @@
+type variant = AAA | BBB | CCC
+
+module Logger = {
+  @react.component
+  let make = () => {
+    Console.log("logger")
+
+    Voby.null
+  }
+}
+
+module TodoItem = {
+  type props = {todo: string}
+
+  let make = props => {
+    Console.log2("todo item created", props.todo)
+
+    Voby.Hooks.useEffectWithCleanup(() => {
+      Console.log2("todo item effect", props.todo)
+
+      () => {
+        Console.log2("todo item effect cleanup", props.todo)
+      }
+    })
+
+    let isEditing = Voby.Observable.make(false)
+
+    Voby.Observable.map(isEditing, value => {
+      switch value {
+      | true =>
+        <li>
+          <input defaultValue={props.todo} />
+          <button onClick={_ => Voby.Observable.update(isEditing, _ => false)}>
+            {Voby.string("cancel")}
+          </button>
+        </li>
+
+      | false =>
+        <li>
+          <span> {Voby.string(props.todo)} </span>
+          <button onClick={_ => Voby.Observable.update(isEditing, _ => true)}>
+            {Voby.string("edit")}
+          </button>
+        </li>
+      }
+    })
+  }
+}
+
+module App = {
+  @react.component
+  let make = () => {
+    let variant = Voby.Observable.make(AAA)
+    let counter = Voby.Observable.make(0)
+    let todos = Voby.Observable.make(["read the docs", "try it out"])
+
+    Voby.Hooks.useEffect(() => {
+      let v = Voby.Observable.read(variant)
+      let c = Voby.Observable.read(counter)
+      let t = Voby.Observable.read(todos)
+
+      Console.log("use effect")
+      Console.log3(v, c, t)
+    })
+
+    let update = () => {
+      Voby.Observable.update(variant, value =>
+        switch value {
+        | AAA => BBB
+        | BBB => CCC
+        | CCC => AAA
+        }
+      )
+
+      Voby.Observable.update(counter, value => value + 1)
+
+      Voby.Observable.update(todos, todos => {
+        Array.concat(todos, [Math.random()->Float.toString])
+        // Array.slice(todos, ~start=0, ~end=1)
+      })
+    }
+
+    let inputRef = Voby.Ref.make(None)
+
+
+    <>
+      <input ref={Voby.Ref.domRef(inputRef)} />
+      <button onClick={_ => update()}> {Voby.string("update")} </button>
+      <div>
+        {Voby.Observable.map(variant, value =>
+          switch value {
+          | AAA => Voby.string("aaa")
+          | BBB => Voby.string("bbb")
+          | CCC => Voby.string("ccc")
+          }
+        )}
+      </div>
+      <div data={Voby.Observable.map(counter, Int.toString)}>
+        {Voby.Observable.map(counter, value => value->Voby.int)}
+      </div>
+      <ul> {Voby.Observable.flatMap(todos, todo => <TodoItem todo />)} </ul>
+    </>
+  }
+}
+
+// this works, but renders the whole component again and again
+// {Voby.Observable.map(counter, value => {
+//   <div data={Int.toString(value)}> {value->Int.toString->React.string} </div>
+// })}
+
+Voby.render(<App />, Voby.querySelector("#app")->Option.getUnsafe)

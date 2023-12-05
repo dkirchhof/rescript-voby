@@ -1,0 +1,18 @@
+{
+  "name": "rescript-voby-demo",
+  "dependencies": {
+    "@rescript/core": "^0.5.0",
+    "@rescript/react": "^0.11.0",
+    "react": "npm:voby",
+    "rescript-voby": "../"
+  },
+  "scripts": {
+    "build-dev": "rescript build -w",
+    "bundle-dev": "bun build ./src/index.mjs --outfile ./public/bundle.mjs --watch",
+    "serve": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "",
+    "rescript": "next"
+  }
+}

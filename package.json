@@ -1,0 +1,19 @@
+{
+  "name": "rescript-voby",
+  "version": "0.0.1",
+  "scripts": {
+    "build-dev": "rescript build -w"
+  },
+  "keywords": [
+    "rescript",
+    "voby"
+  ],
+  "files": [
+    "rescript.json",
+    "src/**/*"
+  ],
+  "devDependencies": {
+    "@rescript/core": "^0.5.0",
+    "rescript": "next"
+  }
+}
