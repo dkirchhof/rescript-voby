@@ -15,11 +15,11 @@
   "suffix": ".mjs",
   "bs-dependencies": [
     "@rescript/core",
-    "@rescript/react",
     "rescript-voby"
   ],
   "bsc-flags": [
-    "-open RescriptCore"
+    "-open RescriptCore",
+    "-open Voby.Globals"
   ],
   "jsx": {
     "version": 4,
