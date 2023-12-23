@@ -1,4 +1,7 @@
-type domProps = JsxDOM.domProps
+type domProps = {
+  ...JsxDOM.domProps,
+  class?: string,
+}
 
 module ReactDOM = {
   @module("voby")

@@ -1,0 +1,23 @@
+type t<'a>
+
+@module("voby")
+external make: 'a => t<'a> = "$"
+
+let map = %raw(`(observable, mapper) => () => mapper(observable())`)
+let map2 = %raw(`(o1, o2, mapper) => () => mapper(o1(), o2())`)
+let map3 = %raw(`(o1, o2, o3, mapper) => () => mapper(o1(), o2(), o3())`)
+
+let bind = %raw(`(observable, mapper) => () => mapper(observable())`)
+let bind2 = %raw(`(o1, o2, mapper) => () => mapper(o1(), o2())`)
+let bind3 = %raw(`(o1, o2, o3, mapper) => () => mapper(o1(), o2(), o3())`)
+
+let bindId = %raw(`observable => () => observable()`)
+
+let getValue = %raw(`observable => observable()`)
+
+let update = %raw(`(observable, updater) => observable(updater)`)
+
+module Array = {
+  @module("oby")
+  external bind: (t<array<'a>>, 'a => 'b) => 'b = "for"
+}

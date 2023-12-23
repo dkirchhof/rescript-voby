@@ -1,0 +1,23 @@
+type t<'a>
+
+@module("voby")
+external make: 'a => t<'a> = "$"
+
+let map: (t<'o1>, 'o1 => 'r) => t<'r>
+let map2: (t<'o1>, t<'o2>, ('o1, 'o2) => 'r) => t<'r>
+let map3: (t<'o1>, t<'o2>, t<'o3>, ('o1, 'o2, 'o3) => 'r) => t<'r>
+
+let bind: (t<'o1>, 'o1 => 'r) => 'r
+let bind2: (t<'o1>, t<'o2>, ('o1, 'o2) => 'r) => 'r
+let bind3: (t<'o1>, t<'o2>, t<'o3>, ('o1, 'o2, 'o3) => 'r) => 'r
+
+let bindId: t<'a> => 'a
+
+let getValue: t<'a> => 'a
+
+let update: (t<'a>, 'a => 'a) => unit
+
+module Array: {
+  @module("oby")
+  external bind: (t<array<'a>>, 'a => 'b) => 'b = "for"
+}
