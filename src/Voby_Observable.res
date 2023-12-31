@@ -42,4 +42,7 @@ let update: (t<'a>, 'a => 'a) => unit = {
 module Array = {
   @module("oby")
   external bind: (t<array<'a>>, 'a => 'b) => 'b = "for"
+
+  @module("oby")
+  external bindWithIndex: (t<array<'a>>, ('a, int) => 'b) => 'b = "for"
 }
