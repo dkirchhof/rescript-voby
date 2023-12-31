@@ -16,3 +16,4 @@ module Observable = Voby_Observable
 module Hooks = Voby_Hooks
 module Ref = Voby_Ref
 module Globals = Voby_Globals
+module Styles = Voby_Styles
