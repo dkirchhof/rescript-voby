@@ -31,15 +31,15 @@ module TodoItem = {
         <li>
           <input defaultValue={props.todo} />
           <button onClick={_ => Voby.Observable.update(isEditing, _ => false)}>
-            {Voby.string("cancel")}
+            {Voby.Transform.string("cancel")}
           </button>
         </li>
 
       | false =>
         <li>
-          <span> {Voby.string(props.todo)} </span>
+          <span> {Voby.JSX.string(props.todo)} </span>
           <button onClick={_ => Voby.Observable.update(isEditing, _ => true)}>
-            {Voby.string("edit")}
+            {Voby.Transform.string("edit")}
           </button>
         </li>
       }
@@ -85,18 +85,18 @@ module App = {
 
     <>
       <input ref={Voby.Ref.domRef(inputRef)} />
-      <button onClick={_ => update()}> {Voby.string("update")} </button>
+      <button onClick={_ => update()}> {Voby.JSX.string("update")} </button>
       <div>
         {Voby.Observable.map(variant, value =>
           switch value {
-          | AAA => Voby.string("aaa")
-          | BBB => Voby.string("bbb")
-          | CCC => Voby.string("ccc")
+          | AAA => Voby.JSX.string("aaa")
+          | BBB => Voby.JSX.string("bbb")
+          | CCC => Voby.JSX.string("ccc")
           }
         )}
       </div>
       <div data={Voby.Observable.map(counter, Int.toString)}>
-        {Voby.Observable.map(counter, value => value->Voby.int)}
+        {Voby.Observable.map(counter, value => value->Voby.JSX.int)}
       </div>
       <ul> {Voby.Observable.flatMap(todos, todo => <TodoItem todo />)} </ul>
     </>

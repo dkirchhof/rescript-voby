@@ -18,11 +18,9 @@
     "rescript-voby"
   ],
   "bsc-flags": [
-    "-open RescriptCore",
-    "-open Voby.Globals"
+    "-open RescriptCore"
   ],
   "jsx": {
-    "version": 4,
-    "mode": "automatic"
+    "module": "Voby.JSX"
   }
 }

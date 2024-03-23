@@ -19,14 +19,14 @@ let make = props => {
     | true =>
       <li class="todo-item">
         <input defaultValue={props.todo.title} />
-        <button onClick={onToggleEdit}> {Voby.string("cancel")} </button>
+        <button onClick={onToggleEdit}> {Voby.JSX.string("cancel")} </button>
       </li>
 
     | false =>
       <li class="todo-item">
-        <span> {Voby.string(props.todo.title)} </span>
-        <button onClick={onToggleEdit}> {Voby.string("edit")} </button>
-        <button onClick={onDelete}> {Voby.string("delete")} </button>
+        <span> {Voby.JSX.string(props.todo.title)} </span>
+        <button onClick={onToggleEdit}> {Voby.JSX.string("edit")} </button>
+        <button onClick={onDelete}> {Voby.JSX.string("delete")} </button>
       </li>
     }
   })

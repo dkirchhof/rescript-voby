@@ -10,22 +10,22 @@ let make = () => {
   let sum = Voby.Observable.map2(a, b, (a, b) => a + b)
 
   <section>
-    <h2> {Voby.string("Computed values")} </h2>
+    <h2> {Voby.JSX.string("Computed values")} </h2>
     <input type_="number" value={Voby.Observable.bind(a, Int.toString)} onInput={onInput(a)} />
     <input type_="number" value={Voby.Observable.bind(b, Int.toString)} onInput={onInput(b)} />
     <div>
-      <span> {Voby.Observable.bind(a, Voby.int)} </span>
-      <span> {Voby.string(" + ")} </span>
-      <span> {Voby.Observable.bind(b, Voby.int)} </span>
-      <span> {Voby.string(" = ")} </span>
-      <span> {Voby.Observable.bind(sum, Voby.int)} </span>
+      <span> {Voby.Observable.bind(a, Voby.JSX.int)} </span>
+      <span> {Voby.JSX.string(" + ")} </span>
+      <span> {Voby.Observable.bind(b, Voby.JSX.int)} </span>
+      <span> {Voby.JSX.string(" = ")} </span>
+      <span> {Voby.Observable.bind(sum, Voby.JSX.int)} </span>
     </div>
     <div>
-      <span> {Voby.Observable.bind(a, Voby.int)} </span>
-      <span> {Voby.string(" * ")} </span>
-      <span> {Voby.Observable.bind(b, Voby.int)} </span>
-      <span> {Voby.string(" = ")} </span>
-      <span> {Voby.Observable.bind2(a, b, (a, b) => Voby.int(a * b))} </span>
+      <span> {Voby.Observable.bind(a, Voby.JSX.int)} </span>
+      <span> {Voby.JSX.string(" * ")} </span>
+      <span> {Voby.Observable.bind(b, Voby.JSX.int)} </span>
+      <span> {Voby.JSX.string(" = ")} </span>
+      <span> {Voby.Observable.bind2(a, b, (a, b) => Voby.JSX.int(a * b))} </span>
     </div>
   </section>
 }

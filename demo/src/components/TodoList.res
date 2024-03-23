@@ -25,11 +25,11 @@ let make = () => {
   let disabledButton = Voby.Observable.map(input, value => String.length(value) === 0)
 
   <section>
-    <h2> {Voby.string("Todo list")} </h2>
+    <h2> {Voby.JSX.string("Todo list")} </h2>
     <div>
       <input value={Voby.Observable.bindId(input)} onInput />
       <button onClick={addTodo} disabled={Voby.Observable.bindId(disabledButton)}>
-        {Voby.string("add")}
+        {Voby.JSX.string("add")}
       </button>
     </div>
     <ul> {Voby.Observable.Array.bind(todos, todo => <TodoItem todo deleteTodo />)} </ul>

@@ -11,11 +11,11 @@ let make = () => {
   let counter4 = Voby.Observable.map(counter, x => x * 4)
 
   <section>
-    <h2> {Voby.string("Counter")} </h2>
-    <div> {Voby.Observable.bind(counter, Voby.int)} </div>
-    <div> {Voby.Observable.bind(counter, x => (x * 2)->Voby.int)} </div>
-    <div> {Voby.Observable.bind(counter4, Voby.int)} </div>
+    <h2> {Voby.JSX.string("Counter")} </h2>
+    <div> {Voby.Observable.bind(counter, Voby.JSX.int)} </div>
+    <div> {Voby.Observable.bind(counter, x => Voby.JSX.int(x * 2))} </div>
+    <div> {Voby.Observable.bind(counter4, Voby.JSX.int)} </div>
     <div class={Voby.Observable.bind(counter, Int.toString)} />
-    <button onClick={inc}> {Voby.string("+")} </button>
+    <button onClick={inc}> {Voby.JSX.string("+")} </button>
   </section>
 }

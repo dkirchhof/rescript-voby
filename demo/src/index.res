@@ -1,1 +1,1 @@
-Voby.render(<App />, Voby.querySelector("#app")->Option.getUnsafe)
+Voby.DOM.render(<App />, Voby.DOM.querySelector("#app")->Option.getUnsafe)
