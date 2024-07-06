@@ -44,5 +44,5 @@ module Array = {
   external bind: (t<array<'a>>, 'a => 'b) => 'b = "for"
 
   @module("oby")
-  external bindWithIndex: (t<array<'a>>, ('a, int) => 'b) => 'b = "for"
+  external bindWithIndex: (t<array<'a>>, ('a, unit => int) => 'b) => 'b = "for"
 }

@@ -1,6 +1,12 @@
+type popover = | @as("auto") Auto | @as("manual") Manual
+type popoverTargetAction = | @as("toggle") Toggle | @as("show") Show | @as("hide") Hide
+
 type domProps = {
   ...JsxDOM.domProps,
   class?: string,
+  popover?: popover,
+  popoverTargetAction?: popoverTargetAction,
+  popoverTarget?: string,
 }
 
 type fragmentProps = {children?: Jsx.element}
