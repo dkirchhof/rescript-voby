@@ -1,0 +1,26 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "rescript-voby",
+      "devDependencies": {
+        "rescript": "next",
+      },
+    },
+  },
+  "packages": {
+    "@rescript/darwin-arm64": ["@rescript/darwin-arm64@12.0.0-beta.11", "", { "os": "darwin", "cpu": "arm64" }, "sha512-O0n5c1jUQScSB3Glzgv7Tb+ZpwkqoCg+aBlmvRmx1yoAKEAUoSM86DKjFCggDOgGQhl4WMcEDd/x36FGEs/tLQ=="],
+
+    "@rescript/darwin-x64": ["@rescript/darwin-x64@12.0.0-beta.11", "", { "os": "darwin", "cpu": "x64" }, "sha512-1V+uKSl5R5ZJLjNkTZk13042wGf/lKVb82jszyYomti+QGY3BDyEKFu6dfjSZlpoehGIVaYv1wiNDOc//GrNiw=="],
+
+    "@rescript/linux-arm64": ["@rescript/linux-arm64@12.0.0-beta.11", "", { "os": "linux", "cpu": "arm64" }, "sha512-nH472aeEmhq2W9rBYJznwCnMsbiW8+h7JA+NIvRugBapU3QQfaZ2moAh+iWji6IcfayhDaUDRLPCccusRug1nA=="],
+
+    "@rescript/linux-x64": ["@rescript/linux-x64@12.0.0-beta.11", "", { "os": "linux", "cpu": "x64" }, "sha512-G6GrLLqrm79AEj7zTbtsodeT+HQmS4awMiwzCsAT+Q3qNOFHdJFGZwzNtU5N6qGn/lBQeLidSQn0uqlG9iH4Ug=="],
+
+    "@rescript/runtime": ["@rescript/runtime@12.0.0-beta.11", "", {}, "sha512-oOVu3IPvkHsL+bCBpQnWRoIg/n0h91mWwDXQ9q5eyBsNr4uqeWt+KcAxhyfYy54Gh07dSJh5FkPz6f/Fbpk3Kg=="],
+
+    "@rescript/win32-x64": ["@rescript/win32-x64@12.0.0-beta.11", "", { "os": "win32", "cpu": "x64" }, "sha512-H7kjiEv9FHTN0FtXa17f0DdeQreKcQEFoggWsLzvk6pKNqkz+dcg/yNgZEHwRUQIjuIE3fQ+du8390vkGxeEWw=="],
+
+    "rescript": ["rescript@12.0.0-beta.11", "", { "dependencies": { "@rescript/runtime": "12.0.0-beta.11" }, "optionalDependencies": { "@rescript/darwin-arm64": "12.0.0-beta.11", "@rescript/darwin-x64": "12.0.0-beta.11", "@rescript/linux-arm64": "12.0.0-beta.11", "@rescript/linux-x64": "12.0.0-beta.11", "@rescript/win32-x64": "12.0.0-beta.11" }, "bin": { "bsc": "cli/bsc.js", "rescript": "cli/rescript.js", "bstracing": "cli/bstracing.js", "rescript-tools": "cli/rescript-tools.js", "rescript-legacy": "cli/rescript-legacy.js" } }, "sha512-oH1LB44+V4vu0YCy8YlK3Y4kuWJx9JvdJ1mTd00Rj340RawfAHDTmfPfvbheecgz7UdGLEj13IID9auJ3KHfVA=="],
+  }
+}

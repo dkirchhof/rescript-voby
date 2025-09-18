@@ -2,7 +2,7 @@
   "name": "rescript-voby",
   "version": "0.0.1",
   "scripts": {
-    "build-dev": "rescript build -w"
+    "build-dev": "rescript watch"
   },
   "keywords": [
     "rescript",
@@ -13,7 +13,6 @@
     "src/**/*"
   ],
   "devDependencies": {
-    "@rescript/core": "latest",
     "rescript": "next"
   }
 }
