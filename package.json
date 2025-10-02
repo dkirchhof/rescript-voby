@@ -1,6 +1,6 @@
 {
   "name": "rescript-voby",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build-dev": "rescript watch"
   },
