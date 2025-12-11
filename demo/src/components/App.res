@@ -2,7 +2,7 @@
 let make = () => {
   <>
     <Counter />
-    <Computed />
-    <TodoList />
+    // <Computed />
+    // <TodoList />
   </>
 }
