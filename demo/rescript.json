@@ -13,12 +13,8 @@
     }
   ],
   "suffix": ".mjs",
-  "bs-dependencies": [
-    "@rescript/core",
+  "dependencies": [
     "rescript-voby"
-  ],
-  "bsc-flags": [
-    "-open RescriptCore"
   ],
   "jsx": {
     "module": "Voby.JSX"
