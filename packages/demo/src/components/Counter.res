@@ -5,7 +5,6 @@ let make = () => {
   let counter = Voby.Observable.make(0)
 
   let inc = _ => {
-    Console.log(Voby.Observable.get(counter)())
     Voby.Observable.update(counter)(v => v + 1)
   }
 

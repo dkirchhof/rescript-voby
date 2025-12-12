@@ -1,17 +1,15 @@
 {
-  "name": "rescript-voby",
-  "namespace": "Voby",
-  "sources": [
-    {
-      "dir": "src",
-      "subdirs": true
-    }
-  ],
-  "package-specs": [
-    {
-      "module": "es6",
-      "in-source": true
-    }
-  ],
-  "suffix": ".mjs"
+  "name": "rescript-voby-monorepo",
+  "package-specs": {
+    "module": "esmodule",
+    "in-source": true
+  },
+  "suffix": ".res.mjs",
+  "jsx": {
+    "module": "Voby.JSX"
+  },
+  "dependencies": [
+    "rescript-voby",
+    "rescript-voby-demo"
+  ]
 }

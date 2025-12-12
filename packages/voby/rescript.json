@@ -1,0 +1,8 @@
+{
+  "name": "rescript-voby",
+  "namespace": "Voby",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  }
+}

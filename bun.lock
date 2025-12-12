@@ -1,12 +1,22 @@
 {
   "lockfileVersion": 1,
-  "configVersion": 0,
+  "configVersion": 1,
   "workspaces": {
     "": {
       "name": "rescript-voby",
       "devDependencies": {
         "rescript": "^12.0.1",
       },
+    },
+    "packages/demo": {
+      "name": "rescript-voby-demo",
+      "dependencies": {
+        "voby": "^0.57.1",
+      },
+    },
+    "packages/voby": {
+      "name": "rescript-voby",
+      "version": "0.1.0",
     },
   },
   "packages": {
@@ -22,6 +32,16 @@
 
     "@rescript/win32-x64": ["@rescript/win32-x64@12.0.1", "", { "os": "win32", "cpu": "x64" }, "sha512-Hv6nwb6A94qtj6b4PcIsmoWhLIcLt6wLuHpD9YNxj4/d9FkrHM/yj9ZKhKan/9rfg4wkHl1cZE898AZe/nWq9g=="],
 
+    "htm": ["htm@3.1.1", "", {}, "sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ=="],
+
+    "oby": ["oby@15.1.2", "", {}, "sha512-6QD9iEoPzV+pMDdcg3RtFWhgDX8pS5hZouVHvgXGDy3Q9RxFfnI3CYv9i62keeuX+qk6iN2z5E9FD3q3OckZ6A=="],
+
     "rescript": ["rescript@12.0.1", "", { "dependencies": { "@rescript/runtime": "12.0.1" }, "optionalDependencies": { "@rescript/darwin-arm64": "12.0.1", "@rescript/darwin-x64": "12.0.1", "@rescript/linux-arm64": "12.0.1", "@rescript/linux-x64": "12.0.1", "@rescript/win32-x64": "12.0.1" }, "bin": { "bsc": "cli/bsc.js", "rescript": "cli/rescript.js", "bstracing": "cli/bstracing.js", "rescript-tools": "cli/rescript-tools.js", "rescript-legacy": "cli/rescript-legacy.js" } }, "sha512-59JyEUyLj+IPd9VutAXpBXRGqaeaHCMtvACJNAy/oI1hjpjklQ2UJE07oLhxoWB4SDZrCxzowNUpE46UAgjOXg=="],
+
+    "rescript-voby": ["rescript-voby@workspace:packages/voby"],
+
+    "rescript-voby-demo": ["rescript-voby-demo@workspace:packages/demo"],
+
+    "voby": ["voby@0.57.4", "", { "dependencies": { "htm": "^3.1.1", "oby": "^15.0.0" } }, "sha512-qbN5YJl4h/SP89CK5rIE+IZKvio1/UV51rYpSGGw5ifAhOF47Dh3OHHxC9FxfuDFFunSUrs8wrU5NcFu9bp92Q=="],
   }
 }

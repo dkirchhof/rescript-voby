@@ -1,0 +1,8 @@
+{
+  "ghostMode": false,
+  "open": false,
+  "files": ["./packages/demo/public/**/*.{html,htm,css,js,mjs}"],
+  "server": {
+    "baseDir": "./packages/demo/public"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "rescript-voby",
+  "version": "0.1.0",
+  "keywords": [
+    "rescript",
+    "voby"
+  ],
+  "files": [
+    "rescript.json",
+    "src/**/*"
+  ]
+}

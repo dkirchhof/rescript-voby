@@ -1,0 +1,6 @@
+{
+  "name": "rescript-voby-demo",
+  "dependencies": {
+    "voby": "^0.57.1"
+  }
+}

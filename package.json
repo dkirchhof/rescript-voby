@@ -1,17 +1,14 @@
 {
-  "name": "rescript-voby",
+  "name": "rescript-voby-monorepo",
   "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build-dev": "rescript watch"
+    "build-dev": "rescript watch",
+    "demo:bundle-dev": "bun build ./packages/demo/src/index.res.mjs --outfile ./packages/demo/public/bundle.mjs --watch",
+    "demo:serve": "lite-server"
   },
-  "keywords": [
-    "rescript",
-    "voby"
-  ],
-  "files": [
-    "rescript.json",
-    "src/**/*"
-  ],
   "devDependencies": {
     "rescript": "^12.0.1"
   }

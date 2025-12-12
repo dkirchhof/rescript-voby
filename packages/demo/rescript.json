@@ -1,0 +1,10 @@
+{
+  "name": "rescript-voby-demo",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "dependencies": [
+    "rescript-voby"
+  ]
+}
