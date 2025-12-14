@@ -16,11 +16,16 @@ external float: float => Jsx.element = "%identity"
 external int: int => Jsx.element = "%identity"
 external string: string => Jsx.element = "%identity"
 external array: array<Jsx.element> => Jsx.element = "%identity"
-external bind: (unit => Jsx.element) => Jsx.element = "%identity"
 
+external bind: (unit => Jsx.element) => Jsx.element = "%identity"
 external bindFloat: Observable.t<float> => Jsx.element = "%identity"
 external bindInt: Observable.t<int> => Jsx.element = "%identity"
 external bindString: Observable.t<string> => Jsx.element = "%identity"
+
+external bindProp: (unit => 'a) => 'a = "%identity"
+external bindFloatProp: Observable.t<float> => float = "%identity"
+external bindIntProp: Observable.t<int> => int = "%identity"
+external bindStringProp: Observable.t<string> => string = "%identity"
 
 @module("voby")
 external jsxFragment: Jsx.component<fragmentProps> = "Fragment"

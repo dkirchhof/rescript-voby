@@ -2,6 +2,12 @@
 let make = () => {
   let counter = Voby.Observable.make(0)
 
+  let label = Voby.Observable.computed(() => {
+    let value = Voby.Observable.get(counter)()
+
+    `${Int.toString(value)} => ${Int.toString(value + 1)}`
+  })
+
   let inc = _ => {
     Voby.Observable.update(counter)(v => v + 1)
   }
@@ -17,6 +23,8 @@ let make = () => {
       )}
     </p>
 
-    <button onClick={inc}> {Voby.JSX.string("+")} </button>
+    <button ariaLabel={Voby.JSX.bindStringProp(label)} onClick={inc}>
+      {Voby.JSX.string("+")}
+    </button>
   </section>
 }
