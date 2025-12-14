@@ -11,13 +11,16 @@ type domProps = {
 
 type fragmentProps = {children?: Jsx.element}
 
-// @val
 external null: Jsx.element = "null"
-
 external float: float => Jsx.element = "%identity"
 external int: int => Jsx.element = "%identity"
 external string: string => Jsx.element = "%identity"
 external array: array<Jsx.element> => Jsx.element = "%identity"
+external bind: (unit => Jsx.element) => Jsx.element = "%identity"
+
+external bindFloat: Observable.t<float> => Jsx.element = "%identity"
+external bindInt: Observable.t<int> => Jsx.element = "%identity"
+external bindString: Observable.t<string> => Jsx.element = "%identity"
 
 @module("voby")
 external jsxFragment: Jsx.component<fragmentProps> = "Fragment"

@@ -1,0 +1,7 @@
+@@jsxConfig({module_: "JSX"})
+
+@jsx.component
+let make = (~children: unit => Jsx.element): Jsx.element => Obj.magic(children)
+
+// type props = { children: unit => Jsx.element}
+// external make: props => Jsx.element = "%identity"

@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build-dev": "rescript watch",
+    "res:dev": "rescript watch",
+    "res:clean": "rescript clean",
     "demo:bundle-dev": "bun build ./packages/demo/src/index.res.mjs --outfile ./packages/demo/public/bundle.mjs --watch",
     "demo:serve": "lite-server"
   },
