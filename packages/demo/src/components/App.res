@@ -3,6 +3,7 @@ let make = () => {
   <>
     <Counter />
     <Calculator />
+    <VobyComponents />
     // <TodoList />
   </>
 }

@@ -26,6 +26,12 @@ external bindString: Observable.t<string> => Jsx.element = "%identity"
 external jsxFragment: Jsx.component<fragmentProps> = "Fragment"
 
 @module("voby")
+external jsxKeyed: (component<'props>, 'props, ~key: string=?, @ignore unit) => element = "jsx"
+
+@module("voby")
+external jsxsKeyed: (component<'props>, 'props, ~key: string=?, @ignore unit) => element = "jsxs"
+
+@module("voby")
 external jsx: (Jsx.component<'props>, 'props) => Jsx.element = "jsx"
 
 @module("voby")
@@ -34,6 +40,12 @@ external jsxs: (Jsx.component<'props>, 'props) => Jsx.element = "jsxs"
 module Elements = {
   @module("voby")
   external jsxFragment: Jsx.component<fragmentProps> = "Fragment"
+
+  @module("voby")
+  external jsxKeyed: (string, domProps, ~key: string=?, @ignore unit) => Jsx.element = "jsx"
+
+  @module("voby")
+  external jsxsKeyed: (string, domProps, ~key: string=?, @ignore unit) => Jsx.element = "jsxs"
 
   @module("voby")
   external jsx: (string, domProps) => Jsx.element = "jsx"

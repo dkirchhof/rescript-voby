@@ -19,7 +19,7 @@ let make = () => {
   })
 
   <section>
-    <h2> {Voby.JSX.string("Counters")} </h2>
+    <h2> {Voby.JSX.string("Calculator")} </h2>
 
     // alternative syntax
     // <div>
