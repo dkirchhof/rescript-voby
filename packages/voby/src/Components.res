@@ -14,7 +14,7 @@ module If = {
   }
 
   @module("voby") @jsx.component(: p)
-  external make: props => Jsx.element = "If"
+  external make: p => Jsx.element = "If"
 }
 
 module For = {
@@ -26,7 +26,7 @@ module For = {
   }
 
   @module("voby") @jsx.component(: p<'a>)
-  external make: props => Jsx.element = "For"
+  external make: p<'a> => Jsx.element = "For"
 }
 
 module Portal = {
@@ -36,5 +36,5 @@ module Portal = {
   }
 
   @module("voby") @jsx.component(: p)
-  external make: props => Jsx.element = "Portal"
+  external make: p => Jsx.element = "Portal"
 }
