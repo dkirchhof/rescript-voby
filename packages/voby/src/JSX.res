@@ -4,10 +4,7 @@ type component<'props> = Jsx.component<'props>
 
 type componentLike<'props, 'return> = Jsx.componentLike<'props, 'return>
 
-type domProps = {
-  ...JsxDOM.domProps,
-  class?: string,
-}
+type domProps = JSXDom.domProps
 
 type fragmentProps = {children?: Jsx.element}
 
