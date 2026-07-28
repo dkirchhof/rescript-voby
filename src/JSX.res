@@ -7,7 +7,6 @@ type componentLike<'props, 'return> = Jsx.componentLike<'props, 'return>
 type domProps = {
   ...JsxDOM.domProps,
   class?: string,
-  popoverTarget?: string,
 }
 
 type fragmentProps = {children?: Jsx.element}
